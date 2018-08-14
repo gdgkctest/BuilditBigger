@@ -10,7 +10,8 @@ import android.widget.TextView;
 
 
 /**
- * A placeholder fragment containing a simple view.
+ * A placeholder fragment containing a simple view. Code provided by Udacity
+
  */
 public class JokeActivityFragment extends Fragment {
 

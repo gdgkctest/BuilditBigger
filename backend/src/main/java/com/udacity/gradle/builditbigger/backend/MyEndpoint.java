@@ -7,7 +7,8 @@ import com.udacity.gradle.jokesource.JokeSource;
 
 import javax.inject.Named;
 
-/** An endpoint class we are exposing */
+/** An endpoint class we are exposing Code provided by Udacity
+ */
 @Api(
         name = "myApi",
         version = "v1",
@@ -23,8 +24,9 @@ public class MyEndpoint {
     @ApiMethod(name = "sayHi")
     public MyBean sayHi(@Named("name") String name) {
         MyBean response = new MyBean();
+        //Changed Code to implement Java Library
         JokeSource jokeSource = new JokeSource();
-        response.setData("Hi, " + jokeSource.getJoke());
+        response.setData(jokeSource.getJoke());
 
         return response;
     }

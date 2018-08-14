@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-
+//Code provided by Udacity
 public class JokeActivity extends AppCompatActivity {
 
     public static String JOKE_KEY = "Joke key";

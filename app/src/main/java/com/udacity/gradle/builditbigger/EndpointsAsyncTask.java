@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.util.Pair;
-import android.widget.Toast;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -16,15 +15,17 @@ import com.udacity.gradle.jokedisplay.JokeActivity;
 
 import java.io.IOException;
 
-public class EndpointsAsyncTask extends AsyncTask<Pair<Context,String>,Void, String> {
+public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
     private static MyApi myApiService = null;
     @SuppressLint("StaticFieldLeak")
     private Context context;
 
+
     @SafeVarargs
     @Override
     protected final String doInBackground(Pair<Context, String>... params) {
-        if(myApiService == null) {  // Only do this once
+
+        if (myApiService == null) {  // Only do this once
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
                     // options for running against local devappserver
@@ -42,6 +43,7 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context,String>,Void, Str
             myApiService = builder.build();
         }
 
+
         context = params[0].first;
         String name = params[0].second;
 
@@ -58,4 +60,5 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context,String>,Void, Str
         intent.putExtra(JokeActivity.JOKE_KEY, result);
         context.startActivity(intent);
     }
+
 }

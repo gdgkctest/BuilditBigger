@@ -2,7 +2,7 @@ package com.udacity.gradle.jokesource;
 
 public class JokeSource {
     public String getJoke() {
-        return "This is a joke from a Java Library";
+        return "Why did the Deer Stop?\n Because in Missouri the \"buck\" stops here";
     }
 
 }

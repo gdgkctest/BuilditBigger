@@ -19,5 +19,10 @@ allprojects {
         jcenter()
         google()
     }
+    //The run all megatask, runs backend then tests app then stops backend
+task willIpassProject(dependsOn: ":backend:appengineStart"){
+    dependsOn ":app:connectedAndroidTest"
+    finalizedBy ":backend:appengineStop"
+}
 
 }
